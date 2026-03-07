@@ -1,4 +1,5 @@
-import { GraduationCap, Facebook, Instagram, Youtube, Twitter } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, GraduationCap } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => (
   <footer className="bg-[#0f172a] text-white py-20">
@@ -9,7 +10,7 @@ const Footer = () => (
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 flex items-center justify-center">
               <img
-                src="/src/assets/logo.png"
+                src={logo}
                 alt="Logo"
                 className="h-full w-auto object-contain"
                 onError={(e) => {

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -21,7 +22,7 @@ const Navbar = () => {
         <a href="#home" className="flex items-center gap-3 group">
           <div className="w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
             <img
-              src="/src/assets/logo.png"
+              src={logo}
               alt="Genesis International Montessori School Logo"
               className="h-full w-auto object-contain"
               onError={(e) => {

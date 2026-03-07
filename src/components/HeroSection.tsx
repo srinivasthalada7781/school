@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Star, Heart, Sparkles } from "lucide-react";
 import kidsPlaying from "@/assets/kids-playing.png";
+import heroBg from "@/assets/hero-bg.png";
 
 const FloatingShape = ({ className }: { className?: string }) => (
   <div className={`absolute rounded-full opacity-30 animate-blob ${className}`} />
@@ -12,7 +13,7 @@ const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/hero-bg.png"
+          src={heroBg}
           alt="School Environment"
           className="w-full h-full object-cover"
         />
