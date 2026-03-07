@@ -44,8 +44,8 @@ const Footer = () => (
         <div>
           <h4 className="font-fredoka mb-3">Contact</h4>
           <div className="space-y-2 text-sm opacity-70">
-            <p>Nagawara, Bengaluru</p>
-            <p>Karnataka 560045</p>
+            <p>Arasavalli Junction</p>
+            <p>Srikakulam, AP 532001</p>
             <p>+91 98765 43210</p>
             <p>admissions@genesis-montessori.in</p>
           </div>

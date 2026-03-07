@@ -34,7 +34,7 @@ const ContactSection = () => {
                     rel="noopener noreferrer"
                     className="text-sm text-primary hover:underline font-medium block"
                   >
-                    Nagawara, Bengaluru, Karnataka 560045
+                    Arasavalli Junction, Srikakulam, AP 532001
                   </a>
                 </div>
               </div>
@@ -57,20 +57,15 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-            {/* Map link container */}
-            <div className="rounded-2xl overflow-hidden shadow-soft h-48 bg-muted relative group">
-              <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition-colors flex flex-col items-center justify-center p-4 text-center">
-                <MapPin className="text-primary mb-2" size={32} />
-                <p className="text-foreground font-bold mb-2">View on Google Maps</p>
-                <a
-                  href="https://maps.app.goo.gl/J29K2A9g32m4eFQZ9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white/80 backdrop-blur-md border border-primary/20 text-primary px-4 py-2 rounded-lg text-sm font-bold shadow-sm"
-                >
-                  Open Maps
-                </a>
-              </div>
+            {/* Map iframe */}
+            <div className="rounded-2xl overflow-hidden shadow-soft h-64 bg-muted flex items-center justify-center">
+              <iframe
+                title="Genesis International Montessori School Location"
+                src="https://maps.google.com/maps?q=GENESIS+International+Montessori+School,+Arasavalli,+Srikakulam&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen
+              />
             </div>
           </div>
 
