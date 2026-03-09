@@ -6,7 +6,7 @@ const images = [
   { src: "/pictures/extra c1.png", alt: "Art and craft activities", span: "" },
   { src: "/pictures/event1.png", alt: "School celebration", span: "md:col-span-2" },
   { src: "/pictures/group.png", alt: "Outdoor games", span: "" },
-  { src: "/pictures/study2.png", alt: "Story time with teacher", span: "" },
+  { src: "/pictures/study2.png", alt: "Story time with teacher", span: "md:col-span-2 md:row-span-2" },
   // 2 New Extra Images
   { src: "/pictures/event6.png", alt: "Special celebration", span: "md:col-span-2" },
 ];
