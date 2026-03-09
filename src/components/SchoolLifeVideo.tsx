@@ -1,9 +1,21 @@
 import { Play } from "lucide-react";
 
 const videos = [
-  { title: "Morning Assembly", desc: "Kids start the day with songs and prayers" },
-  { title: "Classroom Fun", desc: "Interactive learning sessions with teachers" },
-  { title: "Annual Day 2025", desc: "Highlights from our grand celebration" },
+  {
+    title: "Classroom Learning",
+    desc: "Interactive learning sessions and engaging activities with our dedicated teachers.",
+    src: "/videos/class.mp4"
+  },
+  {
+    title: "Extracurricular Fun",
+    desc: "Kids exploring their creative side with arts, crafts, and outdoor play.",
+    src: "/videos/extracirucular.mp4"
+  },
+  {
+    title: "Grand Celebrations",
+    desc: "Highlights from our annual days, festivals, and special school events.",
+    src: "/videos/celebrations.mp4"
+  },
 ];
 
 const SchoolLifeVideo = () => (
@@ -16,12 +28,16 @@ const SchoolLifeVideo = () => (
       <div className="grid md:grid-cols-3 gap-6">
         {videos.map((v) => (
           <div key={v.title} className="glass-card overflow-hidden group">
-            {/* Video placeholder */}
-            <div className="aspect-video bg-muted flex items-center justify-center relative cursor-pointer">
-              <div className="w-16 h-16 rounded-full bg-primary/80 flex items-center justify-center group-hover:scale-110 transition-transform shadow-playful">
-                <Play size={28} className="text-primary-foreground ml-1" />
-              </div>
-              <p className="absolute bottom-2 left-3 text-xs text-muted-foreground">Video placeholder</p>
+            <div className="aspect-video bg-muted relative overflow-hidden">
+              <video
+                src={v.src}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
             </div>
             <div className="p-5">
               <h3 className="font-fredoka text-foreground mb-1">{v.title}</h3>
