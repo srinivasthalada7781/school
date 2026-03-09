@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Star, Heart, Sparkles } from "lucide-react";
-import kidsPlaying from "@/assets/kids-playing.png";
-import heroBg from "@/assets/hero-bg.png";
 
 const FloatingShape = ({ className }: { className?: string }) => (
   <div className={`absolute rounded-full opacity-30 animate-blob ${className}`} />
@@ -13,9 +11,9 @@ const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroBg}
+          src="/pictures/group photo 2.png"
           alt="School Environment"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-background/40 backdrop-blur-[2px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background" />
@@ -54,22 +52,6 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          <div className="flex items-center gap-12 pt-12 justify-center">
-            <div className="flex flex-col items-center">
-              <span className="text-3xl font-black text-primary">15+</span>
-              <span className="text-xs uppercase tracking-[0.3em] font-black opacity-70">Years Excellence</span>
-            </div>
-            <div className="w-px h-12 bg-foreground/20" />
-            <div className="flex flex-col items-center">
-              <span className="text-3xl font-black text-primary">500+</span>
-              <span className="text-xs uppercase tracking-[0.3em] font-black opacity-70">Happy Students</span>
-            </div>
-            <div className="w-px h-12 bg-foreground/20" />
-            <div className="flex flex-col items-center">
-              <span className="text-3xl font-black text-primary">100%</span>
-              <span className="text-xs uppercase tracking-[0.3em] font-black opacity-70">Child Safety</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

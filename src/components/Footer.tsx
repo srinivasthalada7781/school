@@ -1,6 +1,4 @@
 import { Facebook, Twitter, Instagram, Linkedin, Youtube, GraduationCap } from "lucide-react";
-import logo from "@/assets/logo.png";
-
 const Footer = () => (
   <footer className="bg-[#0f172a] text-white py-20">
     <div className="container mx-auto px-4">
@@ -10,7 +8,7 @@ const Footer = () => (
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 flex items-center justify-center">
               <img
-                src={logo}
+                src="/pictures/Genesis Stem Final Logo.png"
                 alt="Logo"
                 className="h-full w-auto object-contain"
                 onError={(e) => {

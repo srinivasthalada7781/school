@@ -1,17 +1,12 @@
-import kidsPlaying from "@/assets/kids-playing.png";
-import kidsLearning from "@/assets/kids-learning.png";
-import kidsArt from "@/assets/kids-art.png";
-import kidsCelebration from "@/assets/kids-celebration.png";
-import kidsOutdoor from "@/assets/kids-outdoor.png";
-import kidsStorytime from "@/assets/kids-storytime.png";
+
 
 const images = [
-  { src: kidsPlaying, alt: "Kids playing together", span: "md:col-span-2 md:row-span-2" },
-  { src: kidsLearning, alt: "Kids learning in class", span: "" },
-  { src: kidsArt, alt: "Art and craft activities", span: "" },
-  { src: kidsCelebration, alt: "School celebration", span: "md:col-span-2" },
-  { src: kidsOutdoor, alt: "Outdoor games", span: "" },
-  { src: kidsStorytime, alt: "Story time with teacher", span: "" },
+  { src: "/pictures/playing.png", alt: "Kids playing together", span: "md:col-span-2 md:row-span-2" },
+  { src: "/pictures/class.png", alt: "Kids learning in class", span: "" },
+  { src: "/pictures/extra c1.png", alt: "Art and craft activities", span: "" },
+  { src: "/pictures/event1.png", alt: "School celebration", span: "md:col-span-2" },
+  { src: "/pictures/group.png", alt: "Outdoor games", span: "" },
+  { src: "/pictures/study2.png", alt: "Story time with teacher", span: "" },
 ];
 
 const GallerySection = () => (

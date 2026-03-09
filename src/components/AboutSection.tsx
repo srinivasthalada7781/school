@@ -1,6 +1,4 @@
 import { Shield, BookOpen, Smile, Heart } from "lucide-react";
-import kidsLearning from "@/assets/kids-learning.png";
-
 const values = [
   { icon: Shield, label: "Safety First", desc: "Secure campus with trained staff", color: "bg-sky-light text-sky" },
   { icon: BookOpen, label: "Joyful Learning", desc: "Play-based curriculum", color: "bg-mint-light text-mint" },
@@ -19,7 +17,7 @@ const AboutSection = () => (
         <div className="relative group perspective-1000">
           <div className="absolute -inset-4 bg-primary/10 rounded-[2.5rem] rotate-3 group-hover:rotate-1 transition-transform" />
           <img
-            src={kidsLearning}
+            src="/pictures/study1.png"
             alt="Children learning in a modern classroom"
             className="relative w-full rounded-[2rem] shadow-premium z-10 transform group-hover:scale-[1.02] transition-all duration-500"
           />
