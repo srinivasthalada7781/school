@@ -1,12 +1,12 @@
 
 
 const images = [
-  { src: "/pictures/playing.png", alt: "Kids playing together", span: "md:col-span-2 md:row-span-2" },
-  { src: "/pictures/class.png", alt: "Kids learning in class", span: "" },
+  { src: "/pictures/happy1.png", alt: "Joyful moments with friends", span: "md:col-span-2 md:row-span-2" },
+  { src: "/pictures/event4.png", alt: "Stage performance", span: "" },
   { src: "/pictures/extra c1.png", alt: "Art and craft activities", span: "" },
   { src: "/pictures/event1.png", alt: "School celebration", span: "md:col-span-2" },
   { src: "/pictures/group.png", alt: "Outdoor games", span: "" },
-  { src: "/pictures/study2.png", alt: "Story time with teacher", span: "md:col-span-2 md:row-span-2" },
+  { src: "/pictures/study2.png", alt: "Story time with teacher", span: "" },
   // 2 New Extra Images
   { src: "/pictures/event6.png", alt: "Special celebration", span: "md:col-span-2" },
 ];
