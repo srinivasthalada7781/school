@@ -30,7 +30,7 @@ const HeroSection = () => {
             <h1 className="text-5xl md:text-7xl lg:text-8xl leading-tight text-foreground font-black drop-shadow-sm">
               Empowering <br />
               <span className="text-primary relative inline-block">
-                Genesis International
+                Genesis Montessori & STEM
                 <div className="absolute -bottom-2 left-0 w-full h-2 bg-secondary rounded-full" />
               </span>
             </h1>

@@ -22,7 +22,7 @@ const Footer = () => (
             </div>
             <div className="flex flex-col">
               <span className="font-black text-xl tracking-tighter leading-none">GENESIS INTERNATIONAL</span>
-              <span className="text-[12px] uppercase tracking-[0.1em] font-bold text-primary">MONTESSORI SCHOOL</span>
+              <span className="text-[12px] uppercase tracking-[0.1em] font-bold text-primary">MONTESSORI and STEM SCHOOL</span>
             </div>
           </div>
           <p className="text-sm text-gray-400 leading-relaxed font-medium">Nurturing young minds with academic excellence, professional care, and a future-ready curriculum since 2010.</p>
@@ -42,9 +42,9 @@ const Footer = () => (
         <div>
           <h4 className="font-fredoka mb-3">Contact</h4>
           <div className="space-y-2 text-sm opacity-70">
-            <p>Arasavalli Junction</p>
+            <p>Visakha A colony, Near Arch</p>
             <p>Srikakulam, AP 532001</p>
-            <p>+91 98765 43210</p>
+            <p>+91 97030 33531, 83283 73123</p>
             <p>admissions@genesis-montessori.in</p>
           </div>
         </div>
@@ -63,7 +63,7 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-primary-foreground/10 mt-8 pt-6 text-center text-sm opacity-60">
-        <p>© 2026 Genesis International Montessori School. All rights reserved.</p>
+        <p>© 2026 Genesis International Montessori and STEM School. All rights reserved.</p>
       </div>
     </div>
   </footer>

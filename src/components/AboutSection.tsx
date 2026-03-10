@@ -37,7 +37,7 @@ const AboutSection = () => (
 
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-              GENESIS INTERNATIONAL MONTESSORI SCHOOL has been a beacon of nurturing and innovation for over a decade. We combine traditional values with modern pedagogical approaches to create a holistic learning environment.
+              GENESIS INTERNATIONAL MONTESSORI AND STEM SCHOOL has been a beacon of nurturing and innovation for over a decade. We combine traditional values with modern pedagogical approaches to create a holistic learning environment.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed font-medium">
               Our curriculum is designed to spark curiosity, foster independence, and build a strong foundation for future academic success through play-based and Montessori methodologies.

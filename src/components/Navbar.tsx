@@ -22,7 +22,7 @@ const Navbar = () => {
           <div className="w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 animate-in zoom-in spin-in-12 duration-700 ease-out">
             <img
               src="/pictures/Genesis Stem Final Logo.png"
-              alt="Genesis International Montessori School Logo"
+              alt="Genesis International Montessori and STEM School Logo"
               className="h-full w-auto object-contain"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
@@ -35,7 +35,7 @@ const Navbar = () => {
           </div>
           <div className="flex flex-col">
             <span className="font-black text-xl tracking-tighter text-foreground leading-none">GENESIS INTERNATIONAL</span>
-            <span className="text-[12px] uppercase tracking-[0.1em] font-bold text-primary">MONTESSORI SCHOOL</span>
+            <span className="text-[12px] uppercase tracking-[0.1em] font-bold text-primary">MONTESSORI and STEM SCHOOL</span>
           </div>
         </a>
 

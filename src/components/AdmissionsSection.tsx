@@ -25,7 +25,7 @@ const AdmissionsSection = () => {
             Give Your Child the <span className="text-secondary">Best Start</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Join the GENESIS INTERNATIONAL MONTESSORI SCHOOL family! Our admission process is simple and friendly. We're here to help every step of the way.
+            Join the GENESIS INTERNATIONAL MONTESSORI AND STEM SCHOOL family! Our admission process is simple and friendly. We're here to help every step of the way.
           </p>
           <div className="glass-card p-8 text-left max-w-md mx-auto">
             <h3 className="font-fredoka text-foreground mb-4 text-center">How to Enroll</h3>

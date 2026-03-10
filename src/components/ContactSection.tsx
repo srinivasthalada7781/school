@@ -60,12 +60,12 @@ const ContactSection = () => {
                 <div>
                   <p className="font-semibold text-foreground text-sm">Location</p>
                   <a
-                    href="https://maps.app.goo.gl/J29K2A9g32m4eFQZ9"
+                    href="https://www.google.com/maps/search/Genesis+International+Montessori+School+Visakha+A+colony+Srikakulam"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-primary hover:underline font-medium block"
                   >
-                    Arasavalli Junction, Srikakulam, AP 532001
+                    Visakha A colony, Near Arch, Srikakulam
                   </a>
                 </div>
               </div>
@@ -75,7 +75,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground text-sm">Phone</p>
-                  <p className="text-sm text-muted-foreground">+91 98765 43210</p>
+                  <p className="text-sm text-muted-foreground">+91 97030 33531, 83283 73123</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -91,8 +91,8 @@ const ContactSection = () => {
             {/* Map iframe */}
             <div className="rounded-2xl overflow-hidden shadow-soft h-64 bg-muted flex items-center justify-center">
               <iframe
-                title="Genesis International Montessori School Location"
-                src="https://maps.google.com/maps?q=GENESIS+International+Montessori+School,+Arasavalli,+Srikakulam&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Genesis International Montessori and STEM School Location"
+                src="https://maps.google.com/maps?q=Genesis+International+Montessori+School,+Visakha+A+colony,+Srikakulam&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-0"
                 loading="lazy"
                 allowFullScreen

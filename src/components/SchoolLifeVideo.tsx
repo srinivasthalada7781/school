@@ -7,12 +7,12 @@ const videos = [
     src: "/videos/class.mp4"
   },
   {
-    title: "Extracurricular Fun",
-    desc: "Kids exploring their creative side with arts, crafts, and outdoor play.",
+    title: "Sports Day Highlights",
+    desc: "Kids exploring their competitive and creative side with sports and outdoor play.",
     src: "/videos/extracirucular.mp4"
   },
   {
-    title: "Grand Celebrations",
+    title: "Events & Celebrations",
     desc: "Highlights from our annual days, festivals, and special school events.",
     src: "/videos/celebrations.mp4"
   },
