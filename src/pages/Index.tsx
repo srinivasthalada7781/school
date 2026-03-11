@@ -10,6 +10,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import AdmissionsSection from "@/components/AdmissionsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ChatBot from "@/components/ChatBot";
 
 const Index = () => (
   <>
@@ -25,6 +26,7 @@ const Index = () => (
     <AdmissionsSection />
     <ContactSection />
     <Footer />
+    <ChatBot />
   </>
 );
 

@@ -45,7 +45,7 @@ const Footer = () => (
             <p>Visakha A colony, Near Arch</p>
             <p>Srikakulam, AP 532001</p>
             <p>+91 97030 33531, 83283 73123</p>
-            <p>admissions@genesis-montessori.in</p>
+            <p>genesissrikakulam@gmail.com</p>
           </div>
         </div>
 
@@ -53,8 +53,13 @@ const Footer = () => (
         <div>
           <h4 className="font-fredoka mb-3">Follow Us</h4>
           <div className="flex gap-3">
-            {[Facebook, Instagram, Youtube, Twitter].map((Icon, i) => (
-              <a key={i} href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors">
+            {[
+              { Icon: Facebook, href: "https://www.facebook.com/genesissrikakulam" },
+              { Icon: Instagram, href: "https://www.instagram.com/genesissrikakulam?igsh=MWZnM2hmZHgxMngzdQ==" },
+              { Icon: Youtube, href: "https://youtube.com/@genesissrikakulam?si=7xvvumudpjKUtvpG" },
+              { Icon: Twitter, href: "#" }
+            ].map(({ Icon, href }, i) => (
+              <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <Icon size={16} />
               </a>
             ))}

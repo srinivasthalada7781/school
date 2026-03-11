@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fredoka+One&family=Quicksand:wght@300..700&family=Bebas+Neue&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,6 +8,7 @@
   :root {
     --background: 210 20% 98%;
     --foreground: 222 47% 11%;
+    --text-main: #133a5d;
 
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
@@ -71,7 +72,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-nunito;
+    @apply bg-background font-nunito;
+    color: var(--text-main);
     scroll-behavior: smooth;
   }
 
@@ -112,6 +114,22 @@
 
   .float-animation-slow {
     animation: float 8s ease-in-out 1s infinite;
+  }
+
+  .font-genesis {
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .font-international {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .font-montessori {
+    font-family: 'Bebas Neue', cursiv;
+  }
+
+  .font-srikakulam {
+    font-family: 'Times New Roman', Times, serif;
   }
 }
 
