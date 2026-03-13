@@ -30,7 +30,7 @@ const ChatBot = () => {
         }
     }, [messages, isTyping]);
 
-    const handleSend = (text: string) => {
+    const handleSend = async (text: string) => {
         if (!text.trim()) return;
 
         const userMessage: ChatMessage = {
@@ -44,7 +44,37 @@ const ChatBot = () => {
         setInputValue("");
         setIsTyping(true);
 
-        // Process bot response
+        const apiUrl = import.meta.env.VITE_CHATBOT_API_URL;
+
+        if (apiUrl) {
+            try {
+                const formData = new FormData();
+                formData.append("message", text);
+
+                const response = await fetch(`${apiUrl}/chat`, {
+                    method: "POST",
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const botMessage: ChatMessage = {
+                        id: (Date.now() + 1).toString(),
+                        text: data.answer,
+                        sender: "bot",
+                        timestamp: new Date(),
+                    };
+                    setMessages((prev) => [...prev, botMessage]);
+                    setIsTyping(false);
+                    return;
+                }
+            } catch (error) {
+                console.error("Chatbot API Error:", error);
+                // Fallback to local logic if API fails
+            }
+        }
+
+        // Fallback or Local Processing
         setTimeout(() => {
             const response = findResponse(text);
             const botMessage: ChatMessage = {
@@ -55,11 +85,11 @@ const ChatBot = () => {
             };
             setMessages((prev) => [...prev, botMessage]);
             setIsTyping(false);
-        }, 1200); // 1.2s delay for realism
+        }, 1200);
     };
 
     const findResponse = (query: string): string => {
-        const lowerQuery = query.toLowerCase();
+        const lowerQuery = query.toLowerCase().trim();
 
         // Scoring system for better matching
         let bestMatch: FAQItem | null = null;
@@ -68,18 +98,23 @@ const ChatBot = () => {
         FAQ_DATA.forEach((item) => {
             let score = 0;
 
+            const question = item.question.toLowerCase();
+
             // Check for exact phrase matches in question
-            if (lowerQuery.includes(item.question.toLowerCase())) {
+            if (lowerQuery.includes(question)) {
                 score += 10;
             }
 
             // Check keywords
             item.keywords.forEach((keyword) => {
-                if (lowerQuery.includes(keyword.toLowerCase())) {
+                const cleanKeyword = keyword.toLowerCase().replace(/[?.,!]/g, '');
+                if (cleanKeyword.length < 3) return;
+
+                if (lowerQuery.includes(cleanKeyword)) {
                     score += 2;
 
                     // Boost if keyword is at the start or end of a word (boundary check)
-                    const regex = new RegExp(`\\b${keyword.toLowerCase()}\\b`, 'i');
+                    const regex = new RegExp(`\\b${cleanKeyword}\\b`, 'i');
                     if (regex.test(lowerQuery)) {
                         score += 3;
                     }

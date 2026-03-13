@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genesis School AI Assistant</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f6fb;
+      min-height: 100vh;
+    }
+
+    .page-content {
+      padding: 40px;
+    }
+
+    .page-content h1 {
+      color: #1f3c88;
+    }
+
+    .page-content p {
+      max-width: 700px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .chat-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #1f3c88;
+      color: white;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .chat-widget {
+      position: fixed;
+      bottom: 95px;
+      right: 20px;
+      width: 370px;
+      height: 540px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+      overflow: hidden;
+      display: none;
+      flex-direction: column;
+      z-index: 1000;
+    }
+
+    .chat-widget.open {
+      display: flex;
+    }
+
+    .chat-header {
+      background: #1f3c88;
+      color: white;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-header h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .chat-header button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .chat-box {
+      flex: 1;
+      padding: 14px;
+      overflow-y: auto;
+      background: #f7f8fc;
+    }
+
+    .msg {
+      margin-bottom: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      max-width: 88%;
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+
+    .user {
+      background: #dbe8ff;
+      margin-left: auto;
+      color: #111;
+    }
+
+    .bot {
+      background: #e9ecef;
+      color: #111;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: #666;
+      margin-top: 8px;
+    }
+
+    .faq-list {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .faq-chip {
+      background: white;
+      border: 1px solid #c8d4f0;
+      color: #1f3c88;
+      border-radius: 20px;
+      padding: 8px 12px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .faq-chip:hover {
+      background: #e8f0ff;
+    }
+
+    .chat-input-area {
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+      border-top: 1px solid #ddd;
+      background: white;
+    }
+
+    .chat-input-area input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .chat-input-area button {
+      background: #1f3c88;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 0 16px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      .chat-widget {
+        width: calc(100vw - 20px);
+        right: 10px;
+        bottom: 80px;
+        height: 70vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <button class="chat-toggle" onclick="toggleChat()">💬</button>
+
+  <div id="chatWidget" class="chat-widget open">
+    <div class="chat-header">
+      <h3>Genesis School AI Assistant</h3>
+      <button onclick="toggleChat()">×</button>
+    </div>
+
+    <div id="chatBox" class="chat-box">
+      <div class="msg bot">
+        Hello! I’m the Genesis School AI Assistant. How can I help you today?
+      </div>
+    </div>
+
+    <div class="chat-input-area">
+      <input id="messageInput" type="text" placeholder="Type your question..." />
+      <button id="sendBtn" type="button">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleChat() {
+      const widget = document.getElementById("chatWidget");
+      widget.classList.toggle("open");
+    }
+
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    async function sendMessage(customMessage = null) {
+      const input = document.getElementById("messageInput");
+      const chatBox = document.getElementById("chatBox");
+      const message = customMessage !== null ? customMessage : input.value.trim();
+
+      if (!message) return;
+
+      chatBox.innerHTML += `<div class="msg user">${escapeHtml(message)}</div>`;
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      const formData = new FormData();
+      formData.append("message", message);
+
+      try {
+        const response = await fetch("/chat", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+
+        let botHtml = `<div class="msg bot">${escapeHtml(data.answer || "No answer found.")}`;
+
+        if (data.matched_question) {
+          botHtml += `<div class="meta"><strong>Matched FAQ:</strong> ${escapeHtml(data.matched_question)}</div>`;
+        }
+
+        if (data.matched_faqs && data.matched_faqs.length > 0) {
+          botHtml += `<div class="meta"><strong>Related questions:</strong></div>`;
+          botHtml += `<div class="faq-list">`;
+
+          data.matched_faqs.forEach((faq) => {
+            if (faq.question) {
+              botHtml += `
+                <button class="faq-chip" type="button" data-question="${escapeHtml(faq.question)}">
+                  ${escapeHtml(faq.question)}
+                </button>
+              `;
+            }
+          });
+
+          botHtml += `</div>`;
+        }
+
+        botHtml += `</div>`;
+        chatBox.innerHTML += botHtml;
+        chatBox.scrollTop = chatBox.scrollHeight;
+      } catch (error) {
+        chatBox.innerHTML += `<div class="msg bot">Something went wrong. Please try again.</div>`;
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    }
+
+    document.getElementById("sendBtn").addEventListener("click", () => sendMessage());
+
+    document.getElementById("messageInput").addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        sendMessage();
+      }
+    });
+
+    document.getElementById("chatBox").addEventListener("click", function (e) {
+      const chip = e.target.closest(".faq-chip");
+      if (!chip) return;
+
+      const question = chip.getAttribute("data-question");
+      if (question) {
+        sendMessage(question);
+      }
+    });
+  </script>
+
+</body>
+</html>
