@@ -117,19 +117,19 @@
   }
 
   .font-genesis {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif !important;
   }
 
   .font-international {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif !important;
   }
 
   .font-montessori {
-    font-family: 'Bebas Neue', cursiv;
+    font-family: 'Bebas Neue', cursive !important;
   }
 
   .font-srikakulam {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif !important;
   }
 }
 
