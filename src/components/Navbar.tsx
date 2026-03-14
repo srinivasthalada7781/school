@@ -19,19 +19,19 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-soft transition-all duration-300">
       <div className="container mx-auto px-4">
-        {/* Top Row: Logo (Left) and School Name (Centered) */}
+        {/* Top Row: Logo (Overlapping) and School Name (Centered) */}
         <div className="relative flex items-center justify-center pt-6 pb-4 border-b border-border/40">
-          {/* Logo on the left */}
-          <div className="absolute left-4 top-1/2 -translate-y-1/2">
+          {/* Logo overlapping the border */}
+          <div className="absolute left-4 top-full -translate-y-1/2 z-20">
             <a href="#home" className="group block">
-              <div className="w-20 h-20 md:w-28 md:h-28 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 animate-in zoom-in spin-in-12 duration-700 ease-out">
+              <div className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 animate-in zoom-in duration-700 ease-out bg-white rounded-full shadow-premium border-4 border-white p-2">
                 <img
                   src="/pictures/Genesis Stem Final Logo.png"
                   alt="Genesis International Montessori and STEM School Logo"
                   className="h-full w-auto object-contain"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.parentElement?.classList.add('bg-primary', 'rounded-xl');
+                    e.currentTarget.parentElement?.classList.add('bg-primary');
                     const icon = document.createElement('div');
                     icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>';
                     e.currentTarget.parentElement?.appendChild(icon.firstChild as Node);
@@ -42,7 +42,7 @@ const Navbar = () => {
           </div>
 
           {/* Centered School Name */}
-          <div className="flex flex-col items-center text-[#133a5d] text-center max-w-[70%]">
+          <div className="flex flex-col items-center text-[#133a5d] text-center max-w-[80%]">
             <div className="flex flex-wrap items-baseline justify-center gap-x-2 text-2xl md:text-3xl lg:text-4xl tracking-tighter leading-none mb-1 whitespace-nowrap">
               <span className="font-genesis font-black">GENESIS</span>
               <span className="font-international font-bold">INTERNATIONAL</span>
