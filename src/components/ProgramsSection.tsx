@@ -5,7 +5,7 @@ const programs = [
   {
     icon: Baby,
     title: "Nursery",
-    age: "Age 2.5 – 3.5 years",
+    age: "Age 3+ years",
     desc: "A gentle introduction to the school environment with sensory play, music, and basic social skills.",
     color: "from-sky-light to-sky/20",
     iconBg: "bg-sky text-primary-foreground",
@@ -13,7 +13,7 @@ const programs = [
   {
     icon: BookOpen,
     title: "LKG",
-    age: "Age 3.5 – 4.5 years",
+    age: "Age 4+ years",
     desc: "Building foundational literacy and numeracy through interactive games, stories, and creative activities.",
     color: "from-mint-light to-mint/20",
     iconBg: "bg-mint text-accent-foreground",
@@ -21,7 +21,7 @@ const programs = [
   {
     icon: GraduationCap,
     title: "UKG",
-    age: "Age 4.5 – 5.5 years",
+    age: "Age 5+ years",
     desc: "Preparing children for primary school with structured learning, reading readiness, and teamwork.",
     color: "from-rose-light to-rose/20",
     iconBg: "bg-rose text-secondary-foreground",
