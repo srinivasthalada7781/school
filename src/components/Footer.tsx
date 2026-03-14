@@ -46,6 +46,7 @@ const Footer = () => (
           <h4 className="font-fredoka mb-3">Contact</h4>
           <div className="space-y-2 text-sm opacity-70">
             <p>Visakha A colony, Near Arch</p>
+            <p className="font-srikakulam">Opposite SBI, Peddapadu Road</p>
             <p className="font-srikakulam">Srikakulam, AP 532001</p>
             <p>+91 97030 33531, 83283 73123</p>
             <p>genesissrikakulam@gmail.com</p>

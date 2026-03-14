@@ -65,7 +65,7 @@ const ContactSection = () => {
                     rel="noopener noreferrer"
                     className="text-sm text-primary hover:underline font-medium block"
                   >
-                    Visakha A colony, Near Arch, Srikakulam
+                    Visakha A colony, Near Arch, Opposite SBI, Peddapadu Road, Srikakulam
                   </a>
                 </div>
               </div>
