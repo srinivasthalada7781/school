@@ -7,7 +7,7 @@ const FloatingShape = ({ className }: { className?: string }) => (
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-40">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-64 pb-20">
       {/* Background Image with Overlay */}
       <div className="absolute inset-x-0 bottom-0 top-28 z-0">
         <img
