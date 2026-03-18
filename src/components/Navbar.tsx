@@ -24,7 +24,7 @@ const Navbar = () => {
           {/* Logo on the left */}
           <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20">
             <a href="#home" className="group block">
-              <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+              <div className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                 <img
                   src="/pictures/Genesis Stem Final Logo.png"
                   alt="Genesis International Montessori and STEM School Logo"
@@ -47,8 +47,8 @@ const Navbar = () => {
               <span className="font-genesis font-black">GENESIS</span>
               <span className="font-international font-bold uppercase">INTERNATIONAL</span>
             </div>
-            <div className="text-[10px] md:text-xs lg:text-sm font-nunito font-semibold tracking-wide opacity-90 mt-1">
-              Montessori & STEM School
+            <div className="text-[10px] md:text-xs lg:text-sm font-nunito font-normal tracking-wide opacity-90 mt-1 lowercase">
+              montessori & stem school
             </div>
           </div>
         </div>
