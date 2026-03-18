@@ -19,12 +19,12 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-soft transition-all duration-300">
       <div className="container mx-auto px-4">
-        {/* Top Row: Logo (Overlapping) and School Name (Centered) */}
-        <div className="relative flex items-center justify-center pt-6 pb-4 border-b border-border/40">
+        {/* Main Navbar Row */}
+        <div className="flex items-center justify-between py-6 md:py-8 min-h-[100px] md:min-h-[120px]">
           {/* Logo on the left */}
-          <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20">
-            <a href="#home" className="group block">
-              <div className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+          <div className="flex-shrink-0 group">
+            <a href="#home" className="block">
+              <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                 <img
                   src="/pictures/Genesis Stem Final Logo.png"
                   alt="Genesis International Montessori and STEM School Logo"
@@ -42,72 +42,56 @@ const Navbar = () => {
           </div>
 
           {/* Centered School Name */}
-          <div className="flex flex-col items-center text-[#133a5d] text-center max-w-[90%] md:max-w-[80%]">
-            <div className="flex items-center justify-center gap-x-2 text-2xl md:text-3xl lg:text-4xl tracking-tighter leading-none mb-1">
-              <span className="font-genesis font-black">GENESIS</span>
-              <span className="font-international font-bold uppercase">INTERNATIONAL</span>
+          <div className="flex flex-col items-center text-[#133a5d] text-center flex-1 mx-4">
+            <div className="flex items-center justify-center gap-x-2 text-xl md:text-3xl lg:text-4xl tracking-tighter leading-none mb-1">
+              <span className="font-genesis font-black uppercase">Genesis</span>
+              <span className="font-international font-bold uppercase transition-all">International</span>
             </div>
-            <div className="text-[10px] md:text-xs lg:text-sm font-nunito font-normal tracking-wide opacity-90 mt-1 lowercase">
+            <div className="text-xl md:text-3xl lg:text-4xl font-nunito font-normal tracking-wide opacity-90 mt-1 lowercase">
               montessori & stem school
             </div>
           </div>
-        </div>
 
-        {/* Bottom Row: Navigation Links (Right Aligned) */}
-        <div className="flex items-center justify-end h-16 relative">
-          {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-1 pr-2">
-            {navLinks.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="group relative px-6 py-2 transition-all duration-300 hover:-translate-y-1 active:scale-95 flex items-center justify-center"
-                style={{ transform: `rotate(${l.rotate})` }}
-              >
-                <div className={`absolute inset-0 ${l.color} transition-all duration-300 shadow-sm`}
-                  style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }} />
-                <span className="relative text-sm font-fredoka font-bold text-[#133a5d] transition-colors tracking-wide">
-                  {l.label}
-                </span>
-              </a>
-            ))}
-            <Button variant="hero" size="sm" className="ml-6 rounded-full px-8 shadow-soft font-fredoka" asChild>
-              <a href="#admissions">Admissions Open</a>
-            </Button>
-          </div>
-
-          {/* Mobile toggle */}
-          <div className="lg:hidden w-full flex justify-between items-center py-2">
-            <span className="text-xs font-bold text-primary tracking-widest uppercase">Navigation</span>
-            <button className="text-foreground w-10 h-10 flex items-center justify-center rounded-xl bg-muted" onClick={() => setOpen(!open)}>
-              {open ? <X size={24} /> : <Menu size={24} />}
+          {/* Hamburger Menu on the right */}
+          <div className="flex-shrink-0">
+            <button
+              className="text-[#133a5d] w-12 h-12 md:w-14 md:h-14 flex flex-col items-center justify-center gap-1.5 rounded-2xl bg-muted/50 hover:bg-muted transition-all active:scale-90 group"
+              onClick={() => setOpen(!open)}
+            >
+              <div className={cn("w-6 md:w-8 h-1 bg-current transition-all duration-300 rounded-full", open && "rotate-45 translate-y-2.5")} />
+              <div className={cn("w-6 md:w-8 h-1 bg-current transition-all duration-300 rounded-full", open && "opacity-0")} />
+              <div className={cn("w-6 md:w-8 h-1 bg-current transition-all duration-300 rounded-full", open && "-rotate-45 -translate-y-2.5")} />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Dropdown Menu (Universal for Desktop & Mobile) */}
       {open && (
-        <div className="lg:hidden bg-card/95 backdrop-blur-md border-t border-border/50 p-6 space-y-4 animate-in slide-in-from-top duration-300">
-          <div className="grid grid-cols-2 gap-4">
-            {navLinks.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className={cn(
-                  "flex items-center justify-center p-4 rounded-2xl text-lg font-fredoka font-bold shadow-soft transition-all active:scale-95",
-                  l.color
-                )}
-                style={{ transform: `rotate(${l.rotate})` }}
-              >
-                {l.label}
-              </a>
-            ))}
+        <div className="absolute top-full left-0 right-0 bg-white/98 backdrop-blur-xl border-t border-border/50 p-8 shadow-2xl animate-in slide-in-from-top-4 duration-300">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+              {navLinks.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    "flex flex-col items-center justify-center p-6 rounded-3xl text-lg md:text-xl font-fredoka font-bold shadow-soft transition-all hover:-translate-y-2 active:scale-95 text-[#133a5d]",
+                    l.color
+                  )}
+                  style={{ transform: `rotate(${l.rotate})` }}
+                >
+                  {l.label}
+                </a>
+              ))}
+            </div>
+            <div className="mt-10 flex justify-center">
+              <Button variant="hero" className="w-full md:w-auto h-16 px-16 text-2xl font-fredoka rounded-3xl shadow-premium" size="lg" asChild>
+                <a href="#admissions">Admissions Open 2026-27</a>
+              </Button>
+            </div>
           </div>
-          <Button variant="hero" className="w-full h-14 text-xl font-fredoka rounded-2xl mt-4 shadow-premium" size="lg" asChild>
-            <a href="#admissions">Admissions Open</a>
-          </Button>
         </div>
       )}
     </nav>

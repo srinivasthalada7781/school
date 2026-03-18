@@ -7,7 +7,7 @@ const FloatingShape = ({ className }: { className?: string }) => (
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-64 pb-20">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-72 md:pt-80 pb-20">
       {/* Background Image with Overlay */}
       <div className="absolute inset-x-0 bottom-0 top-28 z-0">
         <img
@@ -31,7 +31,7 @@ const HeroSection = () => {
               Empowering <br />
               <span className="relative inline-block mt-2">
                 <span className="font-genesis font-black uppercase tracking-tight">Genesis</span>{" "}
-                <span className="text-xl md:text-2xl lg:text-3xl font-nunito font-normal block md:inline-block md:ml-4 mt-4 md:mt-0 align-middle whitespace-nowrap lowercase">
+                <span className="text-3xl md:text-4xl lg:text-5xl font-nunito font-normal block md:inline-block md:ml-4 mt-6 md:mt-0 align-middle whitespace-nowrap lowercase">
                   montessori & stem school
                 </span>
                 <div className="absolute -bottom-2 left-0 w-1/3 h-2 bg-secondary rounded-full hidden md:block" />
