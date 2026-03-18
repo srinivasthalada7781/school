@@ -31,7 +31,7 @@ const HeroSection = () => {
               <span className="font-black">Empowering</span> <br />
               <span className="relative inline-block mt-2">
                 <span className="font-genesis font-black uppercase tracking-tight">Genesis</span>{" "}
-                <span className="text-2xl md:text-3xl lg:text-4xl font-montessori font-normal block md:inline-block md:ml-4 bg-white/40 backdrop-blur-sm px-4 py-1 rounded-2xl border border-white/40 shadow-sm mt-4 md:mt-0 align-middle">
+                <span className="text-xl md:text-2xl lg:text-3xl font-nunito font-normal block md:inline-block md:ml-4 bg-white/40 backdrop-blur-sm px-6 py-2 rounded-2xl border border-white/40 shadow-sm mt-4 md:mt-0 align-middle whitespace-nowrap">
                   Montessori & STEM School
                 </span>
                 <div className="absolute -bottom-2 left-0 w-1/3 h-2 bg-secondary rounded-full hidden md:block" />

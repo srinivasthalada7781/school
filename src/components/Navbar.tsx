@@ -47,7 +47,7 @@ const Navbar = () => {
               <span className="font-genesis font-black">GENESIS</span>
               <span className="font-international font-bold uppercase">INTERNATIONAL</span>
             </div>
-            <div className="text-[10px] md:text-xs lg:text-sm font-montessori font-normal tracking-[0.1em] opacity-80 mt-1">
+            <div className="text-[10px] md:text-xs lg:text-sm font-nunito font-semibold tracking-wide opacity-90 mt-1">
               Montessori & STEM School
             </div>
           </div>
