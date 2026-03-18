@@ -27,11 +27,14 @@ const HeroSection = () => {
           </div>
 
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl leading-tight text-[#133a5d] font-black drop-shadow-sm">
-              Empowering <br />
-              <span className="relative inline-block">
-                <span className="font-genesis">Genesis</span> <span className="font-montessori">Montessori & STEM School</span>
-                <div className="absolute -bottom-2 left-0 w-full h-2 bg-secondary rounded-full" />
+            <h1 className="text-5xl md:text-7xl lg:text-8xl leading-tight text-[#133a5d] drop-shadow-sm">
+              <span className="font-black">Empowering</span> <br />
+              <span className="relative inline-block mt-2">
+                <span className="font-genesis font-black uppercase tracking-tight">Genesis</span>{" "}
+                <span className="text-2xl md:text-3xl lg:text-4xl font-montessori font-normal block md:inline-block md:ml-4 bg-white/40 backdrop-blur-sm px-4 py-1 rounded-2xl border border-white/40 shadow-sm mt-4 md:mt-0 align-middle">
+                  Montessori & STEM School
+                </span>
+                <div className="absolute -bottom-2 left-0 w-1/3 h-2 bg-secondary rounded-full hidden md:block" />
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground font-semibold max-w-3xl mx-auto leading-relaxed drop-shadow-sm">

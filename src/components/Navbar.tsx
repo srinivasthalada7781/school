@@ -45,10 +45,10 @@ const Navbar = () => {
           <div className="flex flex-col items-center text-[#133a5d] text-center max-w-[90%] md:max-w-[80%]">
             <div className="flex items-center justify-center gap-x-2 text-2xl md:text-3xl lg:text-4xl tracking-tighter leading-none mb-1">
               <span className="font-genesis font-black">GENESIS</span>
-              <span className="font-international font-bold">INTERNATIONAL</span>
+              <span className="font-international font-bold uppercase">INTERNATIONAL</span>
             </div>
-            <div className="text-xs md:text-sm lg:text-lg font-montessori font-normal uppercase tracking-[0.2em] opacity-80 mt-1">
-              MONTESSORI and STEM SCHOOL
+            <div className="text-[10px] md:text-xs lg:text-sm font-montessori font-normal tracking-[0.1em] opacity-80 mt-1">
+              Montessori & STEM School
             </div>
           </div>
         </div>
