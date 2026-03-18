@@ -21,17 +21,17 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         {/* Top Row: Logo (Overlapping) and School Name (Centered) */}
         <div className="relative flex items-center justify-center pt-6 pb-4 border-b border-border/40">
-          {/* Logo overlapping the border */}
-          <div className="absolute left-4 top-full -translate-y-1/2 z-20">
+          {/* Logo on the left */}
+          <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20">
             <a href="#home" className="group block">
-              <div className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 animate-in zoom-in duration-700 ease-out bg-white rounded-full shadow-premium border-4 border-white p-2">
+              <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                 <img
                   src="/pictures/Genesis Stem Final Logo.png"
                   alt="Genesis International Montessori and STEM School Logo"
                   className="h-full w-auto object-contain"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.parentElement?.classList.add('bg-primary');
+                    e.currentTarget.parentElement?.classList.add('bg-primary', 'rounded-xl', 'p-2');
                     const icon = document.createElement('div');
                     icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>';
                     e.currentTarget.parentElement?.appendChild(icon.firstChild as Node);
@@ -42,19 +42,21 @@ const Navbar = () => {
           </div>
 
           {/* Centered School Name */}
-          <div className="flex flex-col items-center text-[#133a5d] text-center max-w-[80%]">
-            <div className="flex flex-wrap items-baseline justify-center gap-x-2 text-2xl md:text-3xl lg:text-4xl tracking-tighter leading-none mb-1 whitespace-nowrap">
+          <div className="flex flex-col items-center text-[#133a5d] text-center max-w-[90%] md:max-w-[80%]">
+            <div className="flex items-center justify-center gap-x-2 text-2xl md:text-3xl lg:text-4xl tracking-tighter leading-none mb-1">
               <span className="font-genesis font-black">GENESIS</span>
               <span className="font-international font-bold">INTERNATIONAL</span>
-              <span className="text-sm md:text-lg lg:text-xl font-montessori font-normal uppercase tracking-[0.1em] ml-2">MONTESSORI and STEM SCHOOL</span>
+            </div>
+            <div className="text-xs md:text-sm lg:text-lg font-montessori font-normal uppercase tracking-[0.2em] opacity-80 mt-1">
+              MONTESSORI and STEM SCHOOL
             </div>
           </div>
         </div>
 
-        {/* Bottom Row: Navigation Links */}
-        <div className="flex items-center justify-center h-16 relative">
+        {/* Bottom Row: Navigation Links (Right Aligned) */}
+        <div className="flex items-center justify-end h-16 relative">
           {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1 pr-2">
             {navLinks.map((l) => (
               <a
                 key={l.href}
