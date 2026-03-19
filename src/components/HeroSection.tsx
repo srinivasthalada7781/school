@@ -1,60 +1,90 @@
 import { Button } from "@/components/ui/button";
 import { Star, Heart, Sparkles } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const FloatingShape = ({ className }: { className?: string }) => (
-  <div className={`absolute rounded-full opacity-30 animate-blob ${className}`} />
+const FloatingIcon = ({ children, className }: { children: React.ReactNode, className?: string }) => (
+  <div className={cn("absolute animate-bounce-gentle", className)}>
+    {children}
+  </div>
 );
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-72 md:pt-80 pb-20">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-x-0 bottom-0 top-28 z-0">
-        <img
-          src="/pictures/group photo 2.png"
-          alt="School Environment"
-          className="w-full h-full object-cover object-top"
-        />
-        <div className="absolute inset-0 bg-background/40 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background" />
-      </div>
+    <section id="home" className="relative min-h-[95vh] flex items-center overflow-hidden pt-40 md:pt-48 pb-20 bg-gradient-hero">
+      {/* Dynamic Background Shapes */}
+      <div className="absolute top-1/4 -left-12 w-64 h-64 bg-sunshine/10 rounded-full blur-3xl animate-blob" />
+      <div className="absolute top-1/3 -right-12 w-96 h-96 bg-sky/10 rounded-full blur-3xl animate-blob animation-delayed" />
+      <div className="absolute bottom-1/4 left-1/2 w-80 h-80 bg-rose/10 rounded-full blur-3xl animate-blob animation-slow" />
+
+      {/* Floating Decorative Icons */}
+      <FloatingIcon className="top-40 left-[10%] text-sunshine md:block hidden">
+        <Star size={40} className="fill-current opacity-20 rotate-12" />
+      </FloatingIcon>
+      <FloatingIcon className="top-60 right-[15%] text-rose md:block hidden">
+        <Heart size={32} className="fill-current opacity-20 -rotate-12" />
+      </FloatingIcon>
+      <FloatingIcon className="bottom-40 left-[15%] text-mint md:block hidden">
+        <Sparkles size={36} className="opacity-20 rotate-45" />
+      </FloatingIcon>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-10 animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-white/30 backdrop-blur-md text-foreground border border-white/40 px-6 py-2 rounded-full text-sm font-bold tracking-widest uppercase shadow-sm">
-            <Sparkles size={16} className="text-secondary" />
-            Admissions Open 2026-27
-          </div>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          <div className="space-y-10 text-center lg:text-left animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-white/50 backdrop-blur-md text-primary border-2 border-white px-8 py-3 rounded-full text-sm font-black tracking-widest uppercase shadow-sticker">
+              <Sparkles size={20} className="text-sunshine animate-pulse" />
+              Admissions Open 2026-27
+            </div>
 
-          <div className="space-y-6">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl leading-tight text-[#133a5d] drop-shadow-sm font-normal">
-              Empowering <br />
-              <span className="relative inline-block mt-2">
-                <span className="font-genesis font-black uppercase tracking-tight">Genesis</span>{" "}
-                <span className="text-3xl md:text-4xl lg:text-5xl font-nunito font-normal block md:inline-block md:ml-4 mt-6 md:mt-0 align-middle whitespace-nowrap lowercase">
-                  montessori & stem school
+            <div className="space-y-4">
+              <h1 className="flex flex-col gap-2 md:gap-4 leading-[1.1]">
+                <span className="font-luckiest text-6xl md:text-8xl lg:text-9xl text-primary drop-shadow-[0_8px_0_rgba(19,58,93,0.1)] tracking-normal">
+                  Empowering
                 </span>
-                <div className="absolute -bottom-2 left-0 w-1/3 h-2 bg-secondary rounded-full hidden md:block" />
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-foreground font-semibold max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
-              Where academic excellence meets creative exploration. We nurture every child to become a confident, lifelong learner in a safe and inspiring environment.
-            </p>
+                <span className="relative inline-block">
+                  <span className="font-fredoka font-black text-5xl md:text-7xl lg:text-8xl uppercase text-secondary drop-shadow-[0_5px_0_rgba(19,58,93,0.1)]">
+                    Genesis
+                  </span>
+                  <div className="absolute -bottom-2 left-0 w-full h-3 md:h-5 bg-sunshine/30 -rotate-1 rounded-full -z-10" />
+                </span>
+                <span className="font-fredoka font-black text-2xl md:text-4xl lg:text-5xl uppercase text-[#133a5d] opacity-90 tracking-widest">
+                  International School
+                </span>
+              </h1>
+
+              <p className="text-xl md:text-2xl text-foreground/80 font-bold max-w-2xl mx-auto lg:mx-0 leading-relaxed md:pt-4">
+                Where academic excellence meets <span className="text-primary italic">creative exploration</span>. We nurture every child to become a confident learner.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start pt-6">
+              <Button size="lg" className="kid-button bg-primary hover:bg-primary/90 text-white text-xl" asChild>
+                <a href="#admissions">Enroll Today</a>
+              </Button>
+              <Button size="lg" className="kid-button bg-white text-primary border-4 border-primary/10 text-xl hover:bg-white hover:border-primary/20" asChild>
+                <a href="#about">Our Story</a>
+              </Button>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
-            <Button size="lg" className="rounded-full px-12 h-14 text-xl font-bold shadow-premium bg-primary hover:bg-primary/90 transition-all hover:-translate-y-1" asChild>
-              <a href="#admissions">
-                Enroll Today
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" className="rounded-full px-12 h-14 text-xl font-bold border-2 border-white bg-white/20 backdrop-blur-md hover:bg-white/40 transition-all" asChild>
-              <a href="#about">
-                Our Philosophy
-              </a>
-            </Button>
-          </div>
+          <div className="relative group perspective-1000 hidden lg:block">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-sunshine/20 via-sky/20 to-rose/20 rounded-[4rem] rotate-3 blur-2xl opacity-50 group-hover:rotate-6 transition-transform duration-700" />
+            <div className="relative z-10 rounded-[4rem] overflow-hidden border-8 border-white shadow-premium transform -rotate-2 group-hover:rotate-0 transition-all duration-700">
+              <img
+                src="/pictures/group photo 2.png"
+                alt="Happy students at Genesis"
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            </div>
 
+            {/* Playful Floating Badge */}
+            <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-white rounded-full p-4 shadow-sticker border-4 border-mint/20 flex items-center justify-center rotate-12 group-hover:rotate-0 transition-all duration-500 z-20">
+              <div className="text-center font-fredoka">
+                <span className="block text-3xl font-black text-primary leading-none">10+</span>
+                <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest leading-none">Years of excellence</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

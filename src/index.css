@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fredoka+One&family=Quicksand:wght@300..700&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fredoka+One&family=Quicksand:wght@300..700&family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Caveat:wght@400..700&family=Pacifico&family=Lilita+One&family=Satisfy&family=Luckiest+Guy&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -130,6 +130,73 @@
 
   .font-srikakulam {
     font-family: 'Times New Roman', Times, serif !important;
+  }
+
+  .font-attractive {
+    font-family: 'Dancing Script', cursive !important;
+  }
+
+  .font-handwriting {
+    font-family: 'Caveat', cursive !important;
+  }
+
+  .font-playful {
+    font-family: 'Pacifico', cursive !important;
+  }
+
+  .font-bold-playful {
+    font-family: 'Lilita One', cursive !important;
+  }
+
+  .font-elegant-script {
+    font-family: 'Satisfy', cursive !important;
+  }
+
+  .font-luckiest {
+    font-family: 'Luckiest Guy', cursive !important;
+  }
+
+  /* Ultra Kid Theme Tokens */
+  .kid-card {
+    @apply rounded-[3rem] transition-all border-4 border-white bg-gradient-to-br;
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .kid-card:hover {
+    @apply scale-[1.03] shadow-soft-lg;
+  }
+
+  .kid-sticker {
+    @apply rounded-[2.5rem] border-4 border-white transition-all;
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.2);
+  }
+
+  .kid-sticker:hover {
+    @apply rotate-0;
+  }
+
+  .kid-glass {
+    @apply bg-white/40 backdrop-blur-xl border border-white/50 shadow-premium rounded-[2.5rem];
+  }
+
+  .kid-button {
+    @apply rounded-full px-8 py-4 font-black transition-all shadow-lg;
+  }
+
+  .kid-button:hover {
+    @apply scale-110 shadow-xl opacity-90;
+  }
+
+  .kid-button:active {
+    @apply scale-95;
+  }
+
+  .shadow-sticker {
+    box-shadow: 0 12px 0 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-inner-lg {
+    box-shadow: inset 0 4px 12px 0 rgba(0, 0, 0, 0.05);
   }
 }
 
